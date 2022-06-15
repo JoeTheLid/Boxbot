@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const config = require('./config.json');
-const client = new Discord.Client();
+const client = new Discord.Client({ intents: ["GUILDS", "GUILD_MESSAGES"] })
 
 client.once('ready', () => {
 	console.log('Ready!');
@@ -130,9 +130,9 @@ function rolltype(input,message){
 			switch (botches) {
 				case 0: botchresult = "*Not a Botch!*";
 				break;
-				case 1: botchresult = "1 **Botch! Gain a Warping point**";
+				case 1: botchresult = "1 **Botch!**\n *If this was a mystical botch then gain a Warping point*";
 				break;
-				default:  botchresult = (botches + " **Botches!** Gain " + botches + " warping points and check for Twilight");
+				default:  botchresult = (botches + " **Botches!**\n *If this was a mystical botch then gain* " + botches + " *Warping points and check for Twilight*");
 			}
 			message.channel.send(message.member.displayName + " rolls [" + botchrolls + "] \n[Result] = " + botchresult )
 			if (input.includes("w")){
