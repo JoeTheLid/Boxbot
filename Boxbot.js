@@ -130,9 +130,9 @@ function rolltype(input,message){
 			switch (botches) {
 				case 0: botchresult = "*Not a Botch!*";
 				break;
-				case 1: botchresult = "1 **Botch!**";
+				case 1: botchresult = "1 **Botch! Gain a Warping point**";
 				break;
-				default:  botchresult = (botches + " **Botches!**");
+				default:  botchresult = (botches + " **Botches!** Gain " + botches + " warping points and check for Twilight");
 			}
 			message.channel.send(message.member.displayName + " rolls [" + botchrolls + "] \n[Result] = " + botchresult )
 			if (input.includes("w")){
